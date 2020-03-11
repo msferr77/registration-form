@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Registration form</title>
+  <link href="css/modules.css" rel="stylesheet">
+  <link href="css/type.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+
+  <section class="contact pad-t-2 pad-b-2">
+    <div class="max-length">
+      <h1>Send us a sweet little note</h1>
+
+      <form class="push-0" method="POST" action="https://formspree.io/ferr0173@algonquinlive.com">
+        <div class="push">
+          <label for="name">Name</label>
+          <input id="name" name="name" required>
+        </div>
+        <div class="push">
+          <label for="email">Your email</label>
+          <input id="email" type="email" name="email" required>
+        </div>
+        <div class="push">
+          <label for="subject">Subject</label>
+          <select id="subject" name="_subject">
+            <option>Get a quote!</option>
+            <option>General question</option>
+            <option>Just to talk</option>
+          </select>
+        </div>
+        <div class="push">
+          <label for="details">What's up?</label>
+          <textarea id="details" name="message" required></textarea>
+        </div>
+        <div>
+          <button class="btn btn-light mega" type="submit">Send message</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
+has:
+  - ['form[method="POST"][action*="formspree.io"]', 'The `<form>` should submit to @@https://formspree.io/@@']
+  - 'fieldset'
+  - 'legend'
+  - 'label[for]'
+  - 'input[id][name]'
+  - 'button[type="submit"]'
+  - 'select[id][name]'
+  - 'select > option'
+  - ['select > option:nth-child(4)', 'There should be 4 `<option>` tags']
+  - 'textarea[id][name]'
+  - 'input[type="hidden"]'
+  - '.grid > .unit'
