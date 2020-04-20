@@ -1,9 +1,32 @@
-has:
-  - ['html', 'font-family', '"Open Sans", sans-serif']
-  - ['@60']
-search:
-  - '#000'
-  - '#fff'
-  - '#f2f2f2'
-  - 'padding'
-  - 'border'
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+h1 {
+  border-bottom: 1px solid #000;
+}
+
+.container {
+  padding: 2.6rem 1.3rem;
+  background-color: #fff;
+}
+
+.btn {
+  padding: .15rem .5rem;
+}
+
+@media only screen and (min-width: 60em) {
+
+  .name, .age, .email, .fitness {
+    width: 50%;
+  }
+
+  .age {
+    padding-top: 1.125rem;
+  }
+
+}
