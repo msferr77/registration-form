@@ -4,58 +4,57 @@
   <meta charset="utf-8">
   <title>Registration form</title>
   <link href="css/modules.css" rel="stylesheet">
+  <link href="css/grid.css" rel="stylesheet">
   <link href="css/type.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <section class="contact pad-t-2 pad-b-2">
-    <div class="max-length">
-      <h1>Send us a sweet little note</h1>
-
-      <form class="push-0" method="POST" action="https://formspree.io/ferr0173@algonquinlive.com">
-        <div class="push">
+  <form class="push-0 container" method="POST" action="https://formspree.io/ferr0173@algonquinlive.com">
+    <h1 class="exa normal">Want to go to Mars?</h1>
+    <p class="mega">We’re looking for super-awesome human beings who want to make the long trek to Mars for the adventure of a lifetime.</p>
+    <fieldset class="push-3-4">
+      <legend class="italic mega normal">Personal details</legend>
+      <div class=" grid content-stretch">
+        <div class="name unit xs-1 s-1 m-1 l-1 push pad-t-3-4">
           <label for="name">Name</label>
-          <input id="name" name="name" required>
+          <input id="name" required>
         </div>
-        <div class="push">
-          <label for="email">Your email</label>
-          <input id="email" type="email" name="email" required>
+        <div class=" age unit xs-1 s-1 m-1 l-1 push">
+          <label for="age">Age</label>
+          <input id="age" type="number" name="number">
         </div>
-        <div class="push">
-          <label for="subject">Subject</label>
-          <select id="subject" name="_subject">
-            <option>Get a quote!</option>
-            <option>General question</option>
-            <option>Just to talk</option>
+        <div class=" email unit xs-1 s-1 m-1 l-1 push">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="text">
+        </div>
+        <div class="fitness unit xs-1 s-1 m-1 l-1 push">
+          <label for="fitness">Physical fitness</label>
+          <select id="fitness" name="type">
+            <option>Super-human</option>
+            <option>Fit as a fiddle</option>
+            <option>Not terribly strong</option>
+            <option>A little couch-potato-y</option>
           </select>
         </div>
-        <div class="push">
-          <label for="details">What's up?</label>
-          <textarea id="details" name="message" required></textarea>
-        </div>
-        <div>
-          <button class="btn btn-light mega" type="submit">Send message</button>
-        </div>
-      </form>
-
-    </div>
-  </section>
-
+      </div>
+      <div class="push1-2">
+        <label for="address">Address</label>
+        <textarea id="address" name="text" required></textarea>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend class="italic mega normal">Mission statement</legend>
+      <div class="pad-t-3-4">
+        <label for="details">Why do you want to go to Mars?</label>
+        <textarea id="details" name="texts" required></textarea>
+      </div>
+      <div class="center-text pad-t">
+        <button class="btn btn-light mega" type="submit">Register for the trip!</button>
+        <input type="hidden" name="_subject" value="Request to join the mission">
+      </div>
+    </fieldset>
+  </form>
 </body>
 </html>
-
-has:
-  - ['form[method="POST"][action*="formspree.io"]', 'The `<form>` should submit to @@https://formspree.io/@@']
-  - 'fieldset'
-  - 'legend'
-  - 'label[for]'
-  - 'input[id][name]'
-  - 'button[type="submit"]'
-  - 'select[id][name]'
-  - 'select > option'
-  - ['select > option:nth-child(4)', 'There should be 4 `<option>` tags']
-  - 'textarea[id][name]'
-  - 'input[type="hidden"]'
-  - '.grid > .unit'
